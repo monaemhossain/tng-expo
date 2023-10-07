@@ -1,10 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
-import NavigationBar from "../Components/Header/Navbar/NavigationBar";
+import Banner from "../Components/Header/Banner/Banner";
+import Root from "./Root";
 
   const Routes = createBrowserRouter([
     {
       path: "/",
-      element: <NavigationBar></NavigationBar>,
+      element: <Root></Root>,
+      children: [
+        {
+          path: '/',
+          element: <Banner></Banner>
+        }
+      ]
     },
   ]);
 
