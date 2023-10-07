@@ -1,8 +1,7 @@
 import React from "react";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from "@nextui-org/react";
 
-
-export default function App() {
+const NavigationBar = () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const menuItems = [
         "Profile",
@@ -71,3 +70,4 @@ export default function App() {
         </Navbar>
     );
 }
+export default NavigationBar;
