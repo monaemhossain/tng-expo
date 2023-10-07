@@ -1,8 +1,8 @@
 import { BiLogoFacebookCircle, BiLogoInstagram, BiLogoTwitter, BiLogoPinterest, BiLogoYoutube } from "react-icons/bi";
 const Footer = () => {
     return (
-        <div className="bg-neutral-800 text-white py-8">
-            <div className="max-w-[1024px] mx-auto flex items-center justify-between">
+        <div className="bg-neutral-800 text-white py-8 px-4">
+            <div className="max-w-[1024px] mx-auto flex max-sm:flex-col max-sm:gap-4 text-center items-center justify-between">
                 <div><p>© 2020 Your Company, Inc. All rights reserved.</p></div>
                 <div>
                     <ul className="flex gap-2">

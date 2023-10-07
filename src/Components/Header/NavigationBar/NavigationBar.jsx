@@ -14,8 +14,8 @@ const NavigationBar = () => {
             address: "/services"
         },
         {
-            menu: "About",
-            address: "/about"
+            menu: "Gallery",
+            address: "/gallery"
         }
     ];
     const logInReg = <>
