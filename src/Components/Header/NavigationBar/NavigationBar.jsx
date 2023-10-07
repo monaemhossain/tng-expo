@@ -1,20 +1,24 @@
 import React from "react";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from "@nextui-org/react";
+import { NavLink } from "react-router-dom";
 
 const NavigationBar = () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const menuItems = [
-        "Profile",
-        "Dashboard",
-        "Activity",
-        "Analytics",
-        "System",
-        "Deployments",
-        "My Settings",
-        "Team Settings",
-        "Help & Feedback",
-        "Log Out",
+        {
+            menu: "Home",
+            address: "/"
+        },
+        {
+            menu: "Services",
+            address: "/services"
+        },
+        {
+            menu: "About",
+            address: "/about"
+        }
     ];
+ 
     return (
         <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll isBlurred={true} className="bg-neutral-800 text-white">
             <NavbarMenuToggle
@@ -22,25 +26,26 @@ const NavigationBar = () => {
                 className="sm:hidden"
             />
             <NavbarBrand>
-                <p className="font-bold text-inherit">ACME</p>
+                <p className="font-bold text-inherit">TnG Expo</p>
             </NavbarBrand>
+
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
-                <NavbarItem>
-                    <Link className="text-white" href="#">
-                        Features
-                    </Link>
-                </NavbarItem>
-                <NavbarItem className="text-white">
-                    <Link href="#" aria-current="page">
-                        Customers
-                    </Link>
-                </NavbarItem>
-                <NavbarItem>
-                    <Link className="text-white" href="#">
-                        Integrations
-                    </Link>
-                </NavbarItem>
+                {
+                    menuItems.map((item, index) => (
+                        <NavbarItem key={`${item}-${index}`} className="flex items-center justify-center">
+                            <NavLink
+                                to={item.address}
+                                className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "btn bg-neutral-600 rounded-lg py-1 px-3" : ""
+                                }
+                            >
+                                {item.menu}
+                            </NavLink>
+                        </NavbarItem>
+                    ))
+                }
             </NavbarContent>
+
             <NavbarContent justify="end">
                 <NavbarItem>
                     <Link href="#">Login</Link>
@@ -51,6 +56,7 @@ const NavigationBar = () => {
                     </Button>
                 </NavbarItem>
             </NavbarContent>
+
             <NavbarMenu>
                 {menuItems.map((item, index) => (
                     <NavbarMenuItem key={`${item}-${index}`}>
@@ -67,6 +73,7 @@ const NavigationBar = () => {
                     </NavbarMenuItem>
                 ))}
             </NavbarMenu>
+
         </Navbar>
     );
 }
