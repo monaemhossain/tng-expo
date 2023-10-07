@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMenu, NavbarMenuItem, NavbarMenuToggle, Image } from "@nextui-org/react";
 import { NavLink } from "react-router-dom";
 
 const NavigationBar = () => {
@@ -18,15 +18,22 @@ const NavigationBar = () => {
             address: "/about"
         }
     ];
- 
+    const logInReg = <>
+        <NavbarItem>
+            <Link href="#">Login</Link>
+        </NavbarItem>
+        <NavbarItem>
+            <Button as={Link} color="primary" href="#" variant="flat">
+                Sign Up
+            </Button>
+        </NavbarItem>
+    </>
+
     return (
         <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll isBlurred={true} className="bg-neutral-800 text-white">
-            <NavbarMenuToggle
-                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                className="sm:hidden"
-            />
+
             <NavbarBrand>
-                <p className="font-bold text-inherit">TnG Expo</p>
+                <Image src="/tng.png" className="w-10 h-10" />
             </NavbarBrand>
 
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
@@ -46,32 +53,33 @@ const NavigationBar = () => {
                 }
             </NavbarContent>
 
-            <NavbarContent justify="end">
-                <NavbarItem>
-                    <Link href="#">Login</Link>
-                </NavbarItem>
-                <NavbarItem>
-                    <Button as={Link} color="primary" href="#" variant="flat">
-                        Sign Up
-                    </Button>
-                </NavbarItem>
+            <NavbarContent justify="end" className="max-sm:hidden">
+                {logInReg}
             </NavbarContent>
 
-            <NavbarMenu>
-                {menuItems.map((item, index) => (
-                    <NavbarMenuItem key={`${item}-${index}`}>
-                        <Link
-                            color={
-                                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-                            }
-                            className="w-full"
-                            href="#"
-                            size="lg"
-                        >
-                            {item}
-                        </Link>
+            <NavbarMenuToggle
+                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                className="sm:hidden"
+            />
+
+            <NavbarMenu className="grid justify-center items-center">
+                <div className="grid gap-4">
+                    {menuItems.map((item, index) => (
+                        <NavbarMenuItem key={`${item}-${index}`} className="flex items-center justify-center">
+                            <NavLink
+                                to={item.address}
+                                className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "text-blue-500" : ""
+                                }
+                            >
+                                {item.menu}
+                            </NavLink>
+                        </NavbarMenuItem>
+                    ))}
+                    <NavbarMenuItem className="mt-3 flex flex-col items-center justify-center gap-3">
+                        {logInReg}
                     </NavbarMenuItem>
-                ))}
+                </div>
             </NavbarMenu>
 
         </Navbar>

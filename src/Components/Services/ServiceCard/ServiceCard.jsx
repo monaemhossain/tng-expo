@@ -32,7 +32,7 @@ const ServiceCard = () => {
 
             <div className="w-full">
               <Button
-                className="data-[hover]:bg-foreground/10 bg-neutral-800 text-white border-transparent border-2 hover:bg-foreground/10 hover:text-black hover:border-2 hover:border-black transition-all w-full rounded-lg"
+                className="data-[hover]:bg-foreground/10 bg-neutral-700 text-white border-transparent border-2 hover:bg-foreground/10 hover:text-neutral-700 hover:border-2 hover:border-neutral-700 transition-all w-full rounded-lg"
                 variant="light"
               > Learn More
               </Button>
