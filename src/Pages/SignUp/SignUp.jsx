@@ -6,8 +6,11 @@ import { NavLink } from "react-router-dom";
 const SignUp = () => {
 
 
-    const handleLogin = (e) => {
+    const handleSignUp = (e) => {
         e.preventDefault()
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
 
     }
 
@@ -26,35 +29,35 @@ const SignUp = () => {
                 </div>
                 <Divider className="my-10" />
 
-                <form onSubmit={handleLogin} className="max-w-md mx-auto space-y-8 text-center">
+                <form onSubmit={handleSignUp} className="max-w-md mx-auto space-y-6 text-center">
 
 
-                    <Input
-                        className=""
-                        key="text"
-                        type="text"
-                        label="Enter Your Name"
-                        labelPlacement="outside"
-                        isRequired
-                    />
+                    <label htmlFor="name">
+                        <input
+                            className="w-full border-2 border-neutral-400 px-3 py-2 mb-3 rounded-md"
+                            name="name"
+                            type="text"
+                            placeholder="Enter Your Full Name"
+                        />
+                    </label>
 
-                    <Input
-                        className=""
-                        key="email"
-                        type="email"
-                        label="Enter Your Name"
-                        labelPlacement="outside"
-                        isRequired
-                    />
+                    <label htmlFor="email">
+                        <input
+                            className="w-full border-2 border-neutral-400 px-3 py-2 mb-3 rounded-md"
+                            name="email"
+                            type="email"
+                            placeholder="Enter Your Email"
+                        />
+                    </label>
 
-                    <Input
-                        className=""
-                        key="password"
-                        type="password"
-                        label="Create new Password"
-                        labelPlacement="outside"
-                        isRequired
-                    />
+                    <label htmlFor="password">
+                        <input
+                            className="w-full border-2 border-neutral-400 px-3 py-2 mb-3 rounded-md"
+                            name="password"
+                            type="password"
+                            placeholder="Create new password"
+                        />
+                    </label>
 
                     <Button color="primary" type="submit" className="w-40 bg-[#ff725e] text-white">
                         Sign up

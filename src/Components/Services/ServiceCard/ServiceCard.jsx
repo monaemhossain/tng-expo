@@ -1,8 +1,14 @@
 
 import { Card, CardBody, Image, Button } from "@nextui-org/react";
+import { useNavigate } from "react-router-dom";
 
 const ServiceCard = ({data}) => {
   const {title, image, description } = data;
+  const navigate = useNavigate()
+
+  const handleServiceDetails = (data) => {
+    navigate('/service-details', { state: { data } })
+  }
   return (
     <Card
       // isBlurred
@@ -32,6 +38,7 @@ const ServiceCard = ({data}) => {
 
             <div className="w-full">
               <Button
+                onClick={()=>handleServiceDetails(data)}
                 className="data-[hover]:bg-foreground/10 bg-neutral-700 text-white border-transparent border-2 hover:bg-foreground/10 hover:text-neutral-700 hover:border-2 hover:border-neutral-700 transition-all w-full rounded-lg"
                 variant="light"
               > Learn More

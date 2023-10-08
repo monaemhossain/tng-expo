@@ -5,6 +5,7 @@ import Services from "../Components/Services/Services";
 import Gallery from "../Pages/Gallery/Gallery";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
+import ServiceDetails from "../Components/Services/ServiceDetails/ServiceDetails";
 
   const Routes = createBrowserRouter([
     {
@@ -19,6 +20,10 @@ import SignUp from "../Pages/SignUp/SignUp";
         {
           path: '/services',
           element: <Services></Services>
+        },
+        {
+          path: '/service-details',
+          element: <ServiceDetails></ServiceDetails>
         },
         {
           path: '/gallery',

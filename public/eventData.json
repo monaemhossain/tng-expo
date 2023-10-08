@@ -4,41 +4,47 @@
         "title": "Tech Conference 2023",
         "image": "tech_conference.jpg",
         "ticket_price": 250,
-        "description": "Join us for the biggest tech conference of the year! Explore the latest trends, attend workshops, and network with industry experts."
+        "description": "Join us for the biggest tech conference of the year! Explore the latest trends, attend workshops, and network with industry experts.",
+        "detailed_description": "Tech Conference 2023 is a three-day event that brings together professionals, innovators, and thought leaders from the tech industry. The conference will feature keynote speakers, panel discussions, and hands-on workshops covering a wide range of topics including AI, cybersecurity, blockchain, and more. Attendees will have the opportunity to connect with industry experts, gain valuable insights, and stay at the forefront of technological advancements."
     },
     {
         "id": 2,
         "title": "Gaming Expo Extravaganza",
         "image": "gaming_expo.jpg",
         "ticket_price": 40,
-        "description": "Experience the ultimate gaming expo featuring the newest games, VR experiences, esports tournaments, and meet your favorite gaming influencers."
+        "description": "Experience the ultimate gaming expo featuring the newest games, VR experiences, esports tournaments, and meet your favorite gaming influencers.",
+        "detailed_description": "The Gaming Expo Extravaganza is a two-day celebration of gaming culture. Attendees will have the chance to try out the latest gaming releases, experience cutting-edge virtual reality setups, and watch thrilling esports tournaments. In addition, meet and greet sessions with popular gaming influencers will be scheduled throughout the event. Don't miss out on this opportunity to immerse yourself in the world of gaming!"
     },
     {
         "id": 3,
         "title": "AI and Machine Learning Workshop",
         "image": "ai_workshop.jpg",
         "ticket_price": 150,
-        "description": "Deep dive into the world of Artificial Intelligence and Machine Learning with hands-on workshops and discussions led by leading experts in the field."
+        "description": "Deep dive into the world of Artificial Intelligence and Machine Learning with hands-on workshops and discussions led by leading experts in the field.",
+        "detailed_description": "The AI and Machine Learning Workshop is a one-day intensive program designed for professionals and enthusiasts looking to expand their knowledge in AI and ML. The workshop will cover topics such as neural networks, natural language processing, and practical applications of AI. Participants will have the opportunity to work on real-world projects and gain valuable insights from industry experts. Join us for a day of hands-on learning and skill-building in the exciting field of artificial intelligence."
     },
     {
         "id": 4,
         "title": "E-Sports Championship 2023",
         "image": "esports_championship.jpg",
         "ticket_price": 30,
-        "description": "Witness the adrenaline-pumping action of the E-Sports Championship! Top teams battle it out for glory and cash prizes in various popular games."
+        "description": "Witness the adrenaline-pumping action of the E-Sports Championship! Top teams battle it out for glory and cash prizes in various popular games.",
+        "detailed_description": "The E-Sports Championship 2023 is a high-stakes competition where the best e-sports teams from around the world compete for prestige and cash prizes. Featuring popular games like League of Legends, Counter-Strike, and Rocket League, this event promises intense action and nail-biting moments. Experience the thrill of competitive gaming at its finest and cheer for your favorite teams as they vie for the championship title."
     },
     {
         "id": 5,
         "title": "Virtual Reality Showcase",
         "image": "vr_showcase.jpg",
         "ticket_price": 50,
-        "description": "Step into the world of Virtual Reality at our showcase event. Try out the latest VR gear, experience mind-blowing environments, and meet VR developers."
+        "description": "Step into the world of Virtual Reality at our showcase event. Try out the latest VR gear, experience mind-blowing environments, and meet VR developers.",
+        "detailed_description": "The Virtual Reality Showcase is a unique event that transports attendees into immersive virtual worlds. Try out cutting-edge VR equipment, explore breathtaking virtual environments, and interact with leading VR developers. Whether you're a gaming enthusiast or interested in the applications of VR in various industries, this event offers a hands-on experience like no other. Don't miss your chance to step into the future of technology!"
     },
     {
         "id": 6,
         "title": "Indie Game Developer Expo",
         "image": "indie_game_dev_expo.jpg",
         "ticket_price": 20,
-        "description": "Discover the next big thing in gaming at our Indie Game Developer Expo. Meet indie developers, play unreleased games, and support the indie gaming community."
+        "description": "Discover the next big thing in gaming at our Indie Game Developer Expo. Meet indie developers, play unreleased games, and support the indie gaming community.",
+        "detailed_description": "The Indie Game Developer Expo is a platform for independent game developers to showcase their creativity and innovation. Attendees will have the opportunity to play unreleased indie games, meet the developers behind them, and get a firsthand look at the future of gaming. By participating in this event, you'll be supporting the vibrant and diverse indie gaming community. Join us in celebrating the creativity and passion that drives indie game development!"
     }
 ]
