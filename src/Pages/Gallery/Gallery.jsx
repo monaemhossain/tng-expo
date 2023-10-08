@@ -1,7 +1,7 @@
 
 const Gallery = () => {
     return (
-        <div className="h-screen">
+        <div className="min-h-[calc(100vh-128px)]">
             
         </div>
     );

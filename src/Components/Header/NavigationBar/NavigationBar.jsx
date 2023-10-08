@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMenu, NavbarMenuItem, NavbarMenuToggle, Image } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenu, NavbarMenuItem, NavbarMenuToggle, Image } from "@nextui-org/react";
 import { NavLink } from "react-router-dom";
 
 const NavigationBar = () => {
@@ -20,12 +20,12 @@ const NavigationBar = () => {
     ];
     const logInReg = <>
         <NavbarItem>
-            <Link href="#">Login</Link>
+            <NavLink to="/login">Login</NavLink>
         </NavbarItem>
         <NavbarItem>
-            <Button as={Link} color="primary" href="#" variant="flat">
+            <NavLink as={Link} color="primary" to="./sign-up" variant="flat">
                 Sign Up
-            </Button>
+            </NavLink>
         </NavbarItem>
     </>
 
