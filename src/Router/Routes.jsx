@@ -13,7 +13,8 @@ import SignUp from "../Pages/SignUp/SignUp";
       children: [
         {
           path: '/',
-          element: <Home></Home>
+          element: <Home></Home>,
+          loader: () => fetch('eventData.json'),
         },
         {
           path: '/services',

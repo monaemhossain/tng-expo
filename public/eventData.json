@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "title": "Tech Conference 2023",
+        "image": "tech_conference.jpg",
+        "ticket_price": 250,
+        "description": "Join us for the biggest tech conference of the year! Explore the latest trends, attend workshops, and network with industry experts."
+    },
+    {
+        "id": 2,
+        "title": "Gaming Expo Extravaganza",
+        "image": "gaming_expo.jpg",
+        "ticket_price": 40,
+        "description": "Experience the ultimate gaming expo featuring the newest games, VR experiences, esports tournaments, and meet your favorite gaming influencers."
+    },
+    {
+        "id": 3,
+        "title": "AI and Machine Learning Workshop",
+        "image": "ai_workshop.jpg",
+        "ticket_price": 150,
+        "description": "Deep dive into the world of Artificial Intelligence and Machine Learning with hands-on workshops and discussions led by leading experts in the field."
+    },
+    {
+        "id": 4,
+        "title": "E-Sports Championship 2023",
+        "image": "esports_championship.jpg",
+        "ticket_price": 30,
+        "description": "Witness the adrenaline-pumping action of the E-Sports Championship! Top teams battle it out for glory and cash prizes in various popular games."
+    },
+    {
+        "id": 5,
+        "title": "Virtual Reality Showcase",
+        "image": "vr_showcase.jpg",
+        "ticket_price": 50,
+        "description": "Step into the world of Virtual Reality at our showcase event. Try out the latest VR gear, experience mind-blowing environments, and meet VR developers."
+    },
+    {
+        "id": 6,
+        "title": "Indie Game Developer Expo",
+        "image": "indie_game_dev_expo.jpg",
+        "ticket_price": 20,
+        "description": "Discover the next big thing in gaming at our Indie Game Developer Expo. Meet indie developers, play unreleased games, and support the indie gaming community."
+    }
+]

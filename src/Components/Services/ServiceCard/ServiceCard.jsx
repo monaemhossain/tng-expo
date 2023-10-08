@@ -1,8 +1,8 @@
 
 import { Card, CardBody, Image, Button } from "@nextui-org/react";
 
-const ServiceCard = () => {
-
+const ServiceCard = ({data}) => {
+  const {title, image, description } = data;
   return (
     <Card
       // isBlurred
@@ -25,8 +25,8 @@ const ServiceCard = () => {
           <div className="flex flex-col gap-4">
             <div>
               <div className="flex flex-col gap-1">
-                <h1 className="text-large font-medium mt-2">Frontend Radio</h1>
-                <h3 className="text-foreground/90">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, blanditiis! Tempore cupiditate dignissimos eligendi impedit!</h3>
+                <h1 className="text-large font-medium mt-2">{title}</h1>
+                <h3 className="text-foreground/90">{description}</h3>
               </div>
             </div>
 
