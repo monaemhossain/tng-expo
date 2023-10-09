@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types';
 import ServiceCard from './ServiceCard/ServiceCard';
 
 const Services = ({eventData}) => {
-    console.log(eventData);
+    // console.log(eventData);
     return (
         <div className='max-w-[1024px] mx-auto px-4 py-16'>
             <div>

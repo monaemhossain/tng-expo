@@ -3,18 +3,21 @@ import './Login.css'
 import { NavLink } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Context/AuthProvider";
 
 
 const Login = () => {
   const [togglePass, setTogglePass] = useState(false)
 
+  const {logInUser} = useContext(AuthContext)
+  
   const handleLogin = (e) => {
     e.preventDefault()
     const email = e.target.email.value;
     const password = e.target.password.value;
-    signInWithEmailAndPassword(auth, email, password)
-      .then(user => console.log(user.user.email))
+    logInUser( email, password)
+      .then(user => console.log(user.user))
       .catch(error => console.error(error))
   }
 

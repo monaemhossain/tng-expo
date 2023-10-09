@@ -1,8 +1,9 @@
 import { Button, Checkbox, Divider } from "@nextui-org/react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+// import { createUserWithEmailAndPassword } from "firebase/auth";
 import { NavLink } from "react-router-dom";
-import auth from "../../firebase/firebase.config";
-import { useState } from "react";
+// import auth from "../../firebase/firebase.config";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Context/AuthProvider";
 
 
 
@@ -10,7 +11,9 @@ const SignUp = () => {
     const [successMsg, setSuccessMsg] = useState('')
     const [errMessage, setErrMessage] = useState('')
     const [togglePass, setTogglePass] = useState(false)
-
+    
+    const {createUser} = useContext(AuthContext)
+    
     const handleSignUp = (e) => {
         e.preventDefault()
         const email = e.target.email.value;
@@ -32,7 +35,7 @@ const SignUp = () => {
             return;
         }
         // Create user
-        createUserWithEmailAndPassword(auth, email, password)
+        createUser(email, password)
         .then(user => {
             setSuccessMsg("User Created Successfully")
             console.log(user.user);
