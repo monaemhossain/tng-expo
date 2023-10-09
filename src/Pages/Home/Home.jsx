@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../../Components/Header/Banner/Banner";
 import Services from "../../Components/Services/Services";
-import About from "../../Components/About/Questions";
+import About from "../../Components/Questions/Questions";
 import Newsletter from "../../Components/Newsletter/Newsletter";
 
 const Home = () => {

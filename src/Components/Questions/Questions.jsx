@@ -12,7 +12,7 @@ const Questions = () => {
         <div className='max-w-[1024px] mx-auto px-4 mb-10'>
 
             <div className='grid md:grid-cols-2 grid-cols-1 gap-4 justify-center items-center'>
-                <div>
+                <div className="grayscale hover:grayscale-0 transition-all">
                     <img src="/accordion.svg" alt="accordion image" />
                 </div>
                 <div className='w-full mt-4 mx-auto'>

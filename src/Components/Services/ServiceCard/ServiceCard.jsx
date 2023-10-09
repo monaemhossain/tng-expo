@@ -15,7 +15,7 @@ const ServiceCard = ({data}) => {
       className="border-none bg-background/60 dark:bg-default-100/50 max-w-[610px]"
       shadow="sm"
     >
-      <CardBody>
+      <CardBody className='grayscale hover:grayscale-0 transition-all'>
         <div className="flex flex-col gap-2">
           <div className="relative col-span-6 md:col-span-4">
             <Image
@@ -23,7 +23,7 @@ const ServiceCard = ({data}) => {
               className="object-cover rounded-lg"
               height={200}
               shadow="md"
-              src="https://media.istockphoto.com/id/613553644/photo/halo-cosplay.jpg?s=1024x1024&w=is&k=20&c=6BP4zHxZqItYwNkDlcfRiSlALk6aW2hSVolHkYpqxxM="
+              src={image}
               width="100%"
             />
           </div>
@@ -31,8 +31,8 @@ const ServiceCard = ({data}) => {
           <div className="flex flex-col gap-4">
             <div>
               <div className="flex flex-col gap-1">
-                <h1 className="text-large font-medium mt-2">{title}</h1>
-                <h3 className="text-foreground/90">{description}</h3>
+                <h1 className="text-large font-medium mt-2">{title.slice(0, 25)+"..."}</h1>
+                <h3 className="text-foreground/90">{description.slice(0, 100)+"..."}</h3>
               </div>
             </div>
 
