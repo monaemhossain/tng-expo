@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types'
 import { Card, CardBody, Image, Button } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
 
@@ -52,3 +52,7 @@ const ServiceCard = ({data}) => {
 }
 
 export default ServiceCard;
+
+ServiceCard.propTypes = {
+  data: PropTypes.any
+}

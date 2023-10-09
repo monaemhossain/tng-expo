@@ -1,20 +1,20 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../../Components/Header/Banner/Banner";
 import Services from "../../Components/Services/Services";
-import { useContext } from "react";
-import { AuthContext } from "../../Context/AuthProvider";
+import About from "../../Components/About/Questions";
+import Newsletter from "../../Components/Newsletter/Newsletter";
 
 const Home = () => {
-    const authInfo = useContext(AuthContext)
-    console.log(authInfo);
-
-
+    
     const eventData = useLoaderData()
+    // console.log(data);
 
     return (
         <>
             <Banner></Banner>
             <Services eventData={eventData}></Services>
+            <About></About>
+            <Newsletter></Newsletter>
         </>
     );
 };

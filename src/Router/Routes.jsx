@@ -6,6 +6,7 @@ import Gallery from "../Pages/Gallery/Gallery";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import ServiceDetails from "../Components/Services/ServiceDetails/ServiceDetails";
+import PrivateRoute from "./PrivateRoute";
 
   const Routes = createBrowserRouter([
     {
@@ -19,11 +20,14 @@ import ServiceDetails from "../Components/Services/ServiceDetails/ServiceDetails
         },
         {
           path: '/services',
-          element: <Services></Services>
+          element: <Services></Services>,
+          loader: () => fetch('eventData.json'),
         },
         {
           path: '/service-details',
-          element: <ServiceDetails></ServiceDetails>
+          element: <PrivateRoute>
+            <ServiceDetails></ServiceDetails>
+          </PrivateRoute>
         },
         {
           path: '/gallery',

@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenu, NavbarMenuItem, NavbarMenuToggle, Image } from "@nextui-org/react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../../Context/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const NavigationBar = () => {
+    const { user, logOut } = useContext(AuthContext)
+
+
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const menuItems = [
         {
@@ -18,14 +24,27 @@ const NavigationBar = () => {
             address: "/gallery"
         }
     ];
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                toast("Successfully logged Out")
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
     const logInReg = <>
         <NavbarItem>
-            <NavLink to="/login">Login</NavLink>
+            {
+                user ? <img src={user.photoUrl ? user.photoUrl : "/person.png"} alt="" /> : <NavLink to="/login">Login</NavLink>
+            }
         </NavbarItem>
         <NavbarItem>
-            <NavLink as={Link} color="primary" to="./sign-up" variant="flat">
-                Sign Up
-            </NavLink>
+            {
+                user ?
+                    <NavLink as={Link} to='/login' color="primary" variant="flat" onClick={handleLogOut}>Sign Out</NavLink>
+                    : ""
+            }
         </NavbarItem>
     </>
 
@@ -81,7 +100,18 @@ const NavigationBar = () => {
                     </NavbarMenuItem>
                 </div>
             </NavbarMenu>
-
+            <ToastContainer
+                position="top-right"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
         </Navbar>
     );
 }
