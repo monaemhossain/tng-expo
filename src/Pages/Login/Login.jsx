@@ -86,7 +86,7 @@ const Login = () => {
           <div>
             <p>Don&apos;t have account? <NavLink to="/sign-up" className="text-blue-500 underline">Sign up Here</NavLink> </p>
             <p>or</p>
-            <p onClick={handleGoogleLogin} className="text-blue-500 underline">login with google</p>
+            <p onClick={handleGoogleLogin}><img src="/google.png" alt="google icon" className="mx-auto w-12 cursor-pointer"/></p>
           </div>
 
         </form>

@@ -2,7 +2,7 @@
 import './Banner.css'
 const Banner = () => {
   return (
-    <div className="banner min-h-[620px] relative text-gray-200">
+    <div className="banner min-h-[620px] relative text-gray-200 grayscale hover:grayscale-0 transition-all delay-100">
       <div className='max-w-screen-lg mx-auto grid lg:grid-cols-2 grid-cols-1'>
         <div className='space-y-3 pl-4' data-aos="fade-up"
           data-aos-anchor-placement="center-bottom">

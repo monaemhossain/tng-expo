@@ -43,7 +43,7 @@ const NavigationBar = () => {
     const logInReg = <>
         <NavbarItem>
             {
-                user ? <User className="flex justify-center items-center bg-neutral-700 px-2 py-[4px]"
+                user ? <User className="flex justify-center items-center"
                     name={<p className="text-base text-neutral-300">{user.displayName}</p>}
                     // description="Product Designer"
                     avatarProps={{
@@ -55,7 +55,7 @@ const NavigationBar = () => {
         <NavbarItem>
             {
                 user ?
-                    <NavLink as={Link} to='/login' onClick={handleLogOut} className="hover:bg-neutral-700 transition-all p-[14px] rounded-lg">Log Out</NavLink>
+                    <NavLink as={Link} to='/login' onClick={handleLogOut} className="hover:bg-neutral-700 transition-all px-3 py-2 rounded-lg">Log Out</NavLink>
                     : ""
             }
         </NavbarItem>

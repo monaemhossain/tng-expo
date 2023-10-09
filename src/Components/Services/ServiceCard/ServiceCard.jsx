@@ -15,7 +15,7 @@ const ServiceCard = ({data}) => {
       className="border-none bg-background/60 dark:bg-default-100/50 max-w-[610px]"
       shadow="sm"
     >
-      <CardBody className='grayscale hover:grayscale-0 transition-all'>
+      <CardBody className='grayscale hover:grayscale-0 transition-all delay-100'>
         <div className="flex flex-col gap-2">
           <div className="relative col-span-6 md:col-span-4">
             <Image
