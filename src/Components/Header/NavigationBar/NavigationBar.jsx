@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenu, NavbarMenuItem, NavbarMenuToggle, Image } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenu, NavbarMenuItem, NavbarMenuToggle, Image, User } from "@nextui-org/react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const NavigationBar = () => {
     const { user, logOut } = useContext(AuthContext)
-
+    console.log(user);
 
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const menuItems = [
@@ -36,13 +36,19 @@ const NavigationBar = () => {
     const logInReg = <>
         <NavbarItem>
             {
-                user ? <img src={user.photoUrl ? user.photoUrl : "/person.png"} alt="" /> : <NavLink to="/login">Login</NavLink>
+                user ? <User className="flex justify-center items-center bg-neutral-700 px-2 py-[4px]"
+                    name={<p className="text-base">{user.displayName}</p>}
+                    // description="Product Designer"
+                    avatarProps={{
+                        src: user.photoURL
+                    }}
+                /> : <NavLink to="/login" className='hover:bg-neutral-700 transition-all px-3 py-2 rounded-lg'>Login</NavLink>
             }
         </NavbarItem>
         <NavbarItem>
             {
                 user ?
-                    <NavLink as={Link} to='/login' color="primary" variant="flat" onClick={handleLogOut}>Sign Out</NavLink>
+                    <NavLink as={Link} to='/login' onClick={handleLogOut} className="hover:bg-neutral-700 transition-all p-[14px] rounded-lg">Log Out</NavLink>
                     : ""
             }
         </NavbarItem>
@@ -62,7 +68,7 @@ const NavigationBar = () => {
                             <NavLink
                                 to={item.address}
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "btn bg-neutral-600 rounded-lg py-1 px-3" : ""
+                                    isPending ? "pending" : isActive ? "btn bg-neutral-600 rounded-lg px-3 py-2" : ""
                                 }
                             >
                                 {item.menu}
