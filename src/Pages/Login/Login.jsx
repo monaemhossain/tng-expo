@@ -1,17 +1,21 @@
-import { Button, Divider } from "@nextui-org/react";
+import { Button, Checkbox, Divider } from "@nextui-org/react";
 import './Login.css'
 import { NavLink } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import auth from "../../firebase/firebase.config";
+import { useState } from "react";
 
 
 const Login = () => {
-
+  const [togglePass, setTogglePass] = useState(false)
 
   const handleLogin = (e) => {
     e.preventDefault()
     const email = e.target.email.value;
     const password = e.target.password.value;
-    
-    console.log(email, password.length);
+    signInWithEmailAndPassword(auth, email, password)
+      .then(user => console.log(user.user.email))
+      .catch(error => console.error(error))
   }
 
   return (
@@ -38,16 +42,18 @@ const Login = () => {
             />
           </label>
 
-          <label htmlFor="password">
+          <label htmlFor="password" className="relative">
             <input
-              className="w-full border-2 border-neutral-400 px-3 py-2 mt-3 rounded-md"
+              className="w-full border-2 border-neutral-400 px-3 py-2 mb-3 mt-3 rounded-md"
               name="password"
-              type="password"
-              label="Enter Your Password"
+              type={togglePass ? "text" : "password"}
+              placeholder="Create new password"
+              required
             />
+            <Checkbox size="md" className="absolute bottom-0 right-0" radius="sm" onChange={() => setTogglePass(!togglePass)}></Checkbox>
           </label>
           {
-            
+
           }
           <Button color="primary" type="submit" className="w-40">
             Login
