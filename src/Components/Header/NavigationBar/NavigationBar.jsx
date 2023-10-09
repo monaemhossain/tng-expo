@@ -18,14 +18,14 @@ const NavigationBar = () => {
         {
             menu: "Services",
             address: "/services"
-        },
-        
-    ];
-    const privateMenuItems = [
-        {
+        }
+        , {
             menu: "Gallery",
             address: "/gallery"
         },
+
+    ];
+    const privateMenuItems = [
         {
             menu: "Account",
             address: "/account"
@@ -44,7 +44,7 @@ const NavigationBar = () => {
         <NavbarItem>
             {
                 user ? <User className="flex justify-center items-center bg-neutral-700 px-2 py-[4px]"
-                    name={<p className="text-base">{user.displayName}</p>}
+                    name={<p className="text-base text-neutral-300">{user.displayName}</p>}
                     // description="Product Designer"
                     avatarProps={{
                         src: user.photoURL
@@ -84,7 +84,7 @@ const NavigationBar = () => {
                     ))
                 }
                 {
-                   user? privateMenuItems.map((item, index) => (
+                    user ? privateMenuItems.map((item, index) => (
                         <NavbarItem key={`${item}-${index}`} className="flex items-center justify-center">
                             <NavLink
                                 to={item.address}
@@ -95,7 +95,7 @@ const NavigationBar = () => {
                                 {item.menu}
                             </NavLink>
                         </NavbarItem>
-                    )):''
+                    )) : ''
                 }
             </NavbarContent>
 
@@ -122,6 +122,20 @@ const NavigationBar = () => {
                             </NavLink>
                         </NavbarMenuItem>
                     ))}
+                    {
+                        user ? privateMenuItems.map((item, index) => (
+                            <NavbarItem key={`${item}-${index}`} className="flex items-center justify-center">
+                                <NavLink
+                                    to={item.address}
+                                    className={({ isActive, isPending }) =>
+                                        isPending ? "pending" : isActive ? "btn bg-neutral-600 rounded-lg px-3 py-2" : ""
+                                    }
+                                >
+                                    {item.menu}
+                                </NavLink>
+                            </NavbarItem>
+                        )) : ''
+                    }
                     <NavbarMenuItem className="mt-3 flex flex-col items-center justify-center gap-3">
                         {logInReg}
                     </NavbarMenuItem>
