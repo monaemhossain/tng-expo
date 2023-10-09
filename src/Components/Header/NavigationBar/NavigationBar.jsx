@@ -19,11 +19,18 @@ const NavigationBar = () => {
             menu: "Services",
             address: "/services"
         },
+        
+    ];
+    const privateMenuItems = [
         {
             menu: "Gallery",
             address: "/gallery"
+        },
+        {
+            menu: "Account",
+            address: "/account"
         }
-    ];
+    ]
     const handleLogOut = () => {
         logOut()
             .then(() => {
@@ -75,6 +82,20 @@ const NavigationBar = () => {
                             </NavLink>
                         </NavbarItem>
                     ))
+                }
+                {
+                   user? privateMenuItems.map((item, index) => (
+                        <NavbarItem key={`${item}-${index}`} className="flex items-center justify-center">
+                            <NavLink
+                                to={item.address}
+                                className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "btn bg-neutral-600 rounded-lg px-3 py-2" : ""
+                                }
+                            >
+                                {item.menu}
+                            </NavLink>
+                        </NavbarItem>
+                    )):''
                 }
             </NavbarContent>
 

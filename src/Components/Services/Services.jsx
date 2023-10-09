@@ -5,6 +5,8 @@ import { useLoaderData } from 'react-router-dom';
 import { Divider } from '@nextui-org/react';
 
 const Services = ({eventData}) => {
+    
+      
     const events = useLoaderData()
     
     if(!eventData){

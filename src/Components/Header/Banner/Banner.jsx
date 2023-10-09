@@ -1,8 +1,16 @@
 
 const Banner = () => {
   return (
-    <div>
-      <img className='max-h-[720px] w-full object-cover' src="https://img.freepik.com/free-photo/medium-shot-victorious-gamers-winning_23-2149350009.jpg?w=1380&t=st=1696645597~exp=1696646197~hmac=5bca8b0bd7fdb40c91a6997714b65a635ea3903e3f7c8b6402e280d7b119e115" alt="" />
+    <div className="min-h-[calc(100vh-320px)] overflow-hidden">
+      <div>
+        <h1 className="text-6xl font-bold">
+          Biggest Tech and Gaming Event in 2023
+        </h1>
+        <p>stating on Decemper</p>
+      </div>
+      <div className="absolue">
+        <img src="https://images.unsplash.com/photo-1560298803-1d998f6b5249?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="" />
+      </div>
     </div>
   );
 };
