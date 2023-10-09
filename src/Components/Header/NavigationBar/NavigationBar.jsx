@@ -65,7 +65,9 @@ const NavigationBar = () => {
         <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll isBlurred={true} className="bg-neutral-800 text-white">
 
             <NavbarBrand>
-                <Image src="/tng.png" className="w-10 h-10" />
+                <NavLink to='/'>
+                    <Image src="/tng.png" className="w-10 h-10" />
+                </NavLink>
             </NavbarBrand>
 
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
