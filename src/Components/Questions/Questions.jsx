@@ -11,7 +11,8 @@ const Questions = () => {
     return (
         <div className='max-w-[1024px] mx-auto px-4 mb-10'>
 
-            <div className='grid md:grid-cols-2 grid-cols-1 gap-4 justify-center items-center'>
+            <div className='grid md:grid-cols-2 grid-cols-1 gap-4 justify-center items-center' data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom">
                 <div className="grayscale hover:grayscale-0 transition-all">
                     <img src="/accordion.svg" alt="accordion image" />
                 </div>

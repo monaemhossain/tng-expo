@@ -2,7 +2,7 @@ import { Button, Divider } from "@nextui-org/react";
 
 const Newsletter = () => {
     return (
-        <div className="max-w-md mx-auto grid px-4 mb-14">
+        <div className="max-w-md mx-auto grid px-4 mb-14"  data-aos="fade-up">
             <div className='grid justify-center items-center pb-6'>
                 <h1 className='text-center text-4xl font-bold pb-2'>Newsletter</h1>
                 <Divider className="bg-foreground-600 h-1" />
